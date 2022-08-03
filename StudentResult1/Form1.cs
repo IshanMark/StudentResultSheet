@@ -34,7 +34,7 @@ namespace StudentResult1
 
              total = Sinhala + English + Matha + Science + History + Religion;
 
-             average = total / 6;
+             average = (float)total / 6;
            
         }
 
@@ -217,7 +217,7 @@ namespace StudentResult1
         public void btnAverage_Click(object sender, EventArgs e)
         {
             DefineVariable();
-            labAverage.Text = average.ToString();
+            labAverage.Text = average.ToString("0.00");
 
         }
 
@@ -226,7 +226,7 @@ namespace StudentResult1
             DefineVariable();
             string name = txtStuName.Text;
             string stuNo = txtStuNo.Text;
-            string message ="Student Name: " +name+" Student No: "+stuNo+" Total : "+ total+" Average : "+ average ;
+            string message ="Student Name: " +name+" Student No: "+stuNo+" Total : "+ total+" Average : "+ average.ToString("0.00") ;
             string title = "Student Result Report!";
             MessageBox.Show(message,title);
         }
