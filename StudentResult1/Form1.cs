@@ -207,19 +207,23 @@ namespace StudentResult1
 
         private void btnTotal_Click(object sender, EventArgs e)
         {
-            
+            DefineVariable();
             labTotal.Text = total.ToString();
+
+
 
         }
 
         public void btnAverage_Click(object sender, EventArgs e)
         {
+            DefineVariable();
             labAverage.Text = average.ToString();
 
         }
 
         private void btnComment_Click(object sender, EventArgs e)
         {
+            DefineVariable();
             string name = txtStuName.Text;
             string stuNo = txtStuNo.Text;
             string message ="Student Name: " +name+" Student No: "+stuNo+" Total : "+ total+" Average : "+ average ;
