@@ -117,6 +117,7 @@
             this.btnComment.TabIndex = 62;
             this.btnComment.Text = "Comment";
             this.btnComment.UseVisualStyleBackColor = true;
+            this.btnComment.Click += new System.EventHandler(this.btnComment_Click);
             // 
             // btnClear
             // 

@@ -13,11 +13,15 @@ namespace StudentResult1
 
     public partial class Form1 : Form
     {
+        int total = 0;
+        float average = 0;
+
 
        
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         public void DefineVariable() {
@@ -28,12 +32,10 @@ namespace StudentResult1
            int History = Convert.ToInt32(txtHistory.Text);
            int Religion = Convert.ToInt32(txtReligion.Text);
 
-            int Total = Sinhala + English + Matha + Science + History + Religion;
+             total = Sinhala + English + Matha + Science + History + Religion;
 
-            float Average = Total / 6;
-            labAverage.Text = Average.ToString();
-    
-
+             average = total / 6;
+           
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -200,32 +202,29 @@ namespace StudentResult1
             {
                 labReligion.Text = "A";
             }
-
-
-
-
         }
 
 
         private void btnTotal_Click(object sender, EventArgs e)
         {
-            int Sinhala = Convert.ToInt32(txtSinhala.Text);
-            int English = Convert.ToInt32(txtEnglish.Text);
-            int Matha = Convert.ToInt32(txtMatha.Text);
-            int Science = Convert.ToInt32(txtScience.Text);
-            int History = Convert.ToInt32(txtHistory.Text);
-            int Religion = Convert.ToInt32(txtReligion.Text);
-
-            int Total = Sinhala + English + Matha + Science + History + Religion;
-
-            labTotal.Text = Total.ToString();
+            
+            labTotal.Text = total.ToString();
 
         }
 
         public void btnAverage_Click(object sender, EventArgs e)
         {
-            DefineVariable();
+            labAverage.Text = average.ToString();
 
+        }
+
+        private void btnComment_Click(object sender, EventArgs e)
+        {
+            string name = txtStuName.Text;
+            string stuNo = txtStuNo.Text;
+            string message ="Student Name: " +name+" Student No: "+stuNo+" Total : "+ total+" Average : "+ average ;
+            string title = "Student Result Report!";
+            MessageBox.Show(message,title);
         }
     }
 }
